@@ -1,0 +1,94 @@
+@use '../../styles/variables' as va;
+@use '../../styles/mixins' as mx;
+@use 'sass:color' as color;
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 94%;
+    background-color: rgba(va.$primary-bg, 0.95); 
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: va.$spacing-md va.$spacing-xl;
+    box-shadow: 0 2px 10px rgba(va.$primary-bg, 0.5);
+    border-bottom: 1px solid rgba(va.$accent-color, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: va.$text-light;
+    cursor: pointer;
+    
+    .logoIcon {
+        color: va.$accent-color;
+        margin-right: va.$spacing-sm;
+    }
+
+    &:hover {
+        color: va.$accent-color;
+        .logoIcon {
+            filter: drop-shadow(0 0 5px va.$accent-color);
+        }
+    }
+}
+
+.navLinks {
+    display: flex;
+    gap: va.$spacing-lg;
+
+    @include mx.breakpoint(md) {
+        display: none;
+    }
+}
+
+.navItem {
+    color: va.$text-muted;
+    padding: va.$spacing-sm 0;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        color: va.$accent-color;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: va.$accent-color;
+        transition: width 0.3s ease;
+    }
+    
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.ctaButton {
+    color: va.$accent-color !important;
+    border: 1px solid va.$accent-color;
+    padding: va.$spacing-sm va.$spacing-md !important;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: va.$accent-color;
+        color: va.$primary-bg !important;
+        @include mx.neon-glow(va.$accent-color, 0.3);
+    }
+    
+    &::after {
+        display: none;
+    }
+}

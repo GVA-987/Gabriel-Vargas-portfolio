@@ -1,0 +1,96 @@
+@use '../../styles/variables' as va;
+@use '../../styles/mixins' as mx;
+@use 'sass:color' as color;
+
+.projectSection {
+    padding: va.$spacing-xl * 2 va.$spacing-lg; 
+    color: va.$text-light;
+    text-align: center;
+}
+
+.title {
+    color: va.$accent-color;
+    font-size: 2.5rem;
+    margin-bottom: va.$spacing-xl;
+}
+
+.projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: va.$spacing-lg;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.projectCard {
+    @include mx.dark-card(va.$spacing-lg);
+    @include mx.hover-lift(0.25); 
+    
+    border-radius: 10px;
+    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+.projectTitle {
+    color: va.$text-light;
+    font-size: 1.5rem;
+    margin-bottom: va.$spacing-md;
+}
+
+.projectDesc {
+    color: va.$text-muted;
+    flex-grow: 1; 
+    margin-bottom: va.$spacing-lg;
+}
+
+.techStack {
+    margin-bottom: va.$spacing-lg;
+}
+
+.techBadge {
+    display: inline-block;
+    background-color: color.adjust(va.$secondary-bg, $lightness: 10%);
+    color: va.$accent-color;
+    padding: 0.3em 0.8em;
+    border-radius: 4px;
+    margin-right: 0.5em;
+    font-size: 0.8rem;
+    margin-top: va.$spacing-sm;
+}
+
+.subProjectLinks {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: va.$spacing-md;
+    margin-top: va.$spacing-lg;
+    margin-bottom: va.$spacing-md; 
+    display: flex;
+    justify-content: center;
+}
+
+.links {
+    display: flex;
+    gap: va.$spacing-md;
+    margin-top: va.$spacing-md;
+    justify-content: center;
+}
+
+.linkButton {
+    display: flex;
+    gap: 0.5rem;
+    color: va.$accent-color;
+    border: 1px solid va.$accent-color;
+    padding: 13px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    // flex-grow: 1;
+    width: 70%;
+
+    &:hover {
+        background-color: va.$accent-color;
+        color: va.$primary-bg;
+    }
+}

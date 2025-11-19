@@ -1,0 +1,42 @@
+@use 'sass:color' as color;
+@use 'sass:map';
+@use '_variables.scss' as va;
+
+//  NEON-GLOW
+@mixin neon-glow($color: va.$accent-color, $spread: 0.5) {
+    box-shadow: 
+        0 0 5px rgba($color, $spread),
+        0 0 10px rgba($color, $spread * 0.7),
+        0 0 15px rgba($color, $spread * 0.4);
+    transition: box-shadow 0.3s ease;
+}
+
+// DARK-CARD
+@mixin dark-card($padding: va.$spacing-lg) {
+    background-color: va.$secondary-bg;
+    padding: $padding;
+    border-radius: 8px;
+    border: 1px solid color.adjust(va.$secondary-bg, $lightness: 5%);
+    transition: all 0.3s ease;
+}
+
+// HOVER-LIFT
+@mixin hover-lift($glow-spread: 0.4) {
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(va.$accent-color, $glow-spread);
+    }
+}
+
+// BREAKPOINT ( sm, md, lg, xl)
+@mixin breakpoint($size) {
+    @if map.has-key(va.$breakpoints, $size) {
+        $breakpoint-value: map.get(va.$breakpoints, $size);
+
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @warn "No se encontró el breakpoint '#{$size}' en $breakpoints.";
+    }
+}

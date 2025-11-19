@@ -1,0 +1,140 @@
+@use '../../styles/variables' as va;
+@use 'sass:color' as color;
+
+.contactSection {
+    padding: va.$spacing-xl * 2 va.$spacing-lg;
+    color: va.$text-light;
+    text-align: center;
+    background-color: va.$primary-bg; 
+}
+
+.title {
+    color: va.$accent-color;
+    font-size: 2.5rem;
+    margin-bottom: va.$spacing-md;
+}
+
+.subtitle {
+    color: va.$text-muted;
+    margin-bottom: va.$spacing-xl * 1.5;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    gap: va.$spacing-xl * 2;
+    text-align: left;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: va.$spacing-xl;
+    }
+}
+
+.formColumn {
+    flex: 2; 
+    min-width: 300px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: va.$spacing-md;
+}
+
+.inputField, .textareaField {
+    padding: va.$spacing-md;
+    border: 1px solid color.adjust(va.$secondary-bg, $lightness: 5%);
+    border-radius: 5px;
+    background-color: va.$secondary-bg;
+    color: va.$text-light;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        border-color: va.$accent-color;
+        outline: none;
+        box-shadow: 0 0 5px rgba(va.$accent-color, 0.5);
+    }
+}
+
+.textareaField {
+    resize: vertical;
+}
+
+.submitButton {
+    padding: va.$spacing-md;
+    background-color: va.$accent-color;
+    color: va.$primary-bg;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        background-color: color.adjust(va.$accent-color, $lightness: 10%);
+        box-shadow: 0 0 10px rgba(va.$accent-color, 0.7);
+    }
+}
+
+.infoColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    gap: va.$spacing-lg;
+
+    @media (max-width: 768px) {
+        padding-left: 0;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: va.$spacing-md;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.infoIcon {
+    font-size: 1.5rem;
+    color: va.$accent-color;
+}
+
+.infoLink, .infoText {
+    color: va.$text-muted;
+    transition: color 0.3s ease;
+}
+
+.infoLink:hover {
+    color: va.$accent-color;
+}
+
+.socials {
+    display: flex;
+    gap: va.$spacing-lg;
+    margin-top: va.$spacing-md;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.socialIcon {
+    font-size: 2rem;
+    color: va.$accent-color;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: color.adjust(va.$accent-color, $lightness: 15%);
+    }
+}

@@ -1,0 +1,21 @@
+$primary-bg: #1A1A1A;   
+$secondary-bg: #2B2B2B;  
+$accent-color: #2b7fad;  
+$text-light: #F0F0F0;    
+$text-muted: #B0B0B0;   
+
+$font-family-primary: 'Montserrat', sans-serif;
+
+// Espaciado
+$spacing-xxl: 4rem;
+$spacing-xl: 3rem;
+$spacing-lg: 2rem;
+$spacing-md: 1rem;
+$spacing-sm: 0.5rem;
+
+$breakpoints: (
+  sm: 576px, // Pequeño
+  md: 768px, // Medio 
+  lg: 992px, // Grande 
+  xl: 1200px, // Extra Grande
+);
