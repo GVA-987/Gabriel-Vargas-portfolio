@@ -15,7 +15,7 @@ const Navbar = () => {
         <header className={styles.navbar}>
             <div className={styles.logo} onClick={() => scrollToSection('home')}>
                 <FaLaptopCode className={styles.logoIcon} />
-                <span>Juan Gabriel</span>
+                <span>GVA</span>
             </div>
 
             <nav className={styles.navLinks}>

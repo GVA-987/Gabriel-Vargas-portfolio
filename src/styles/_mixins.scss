@@ -2,7 +2,6 @@
 @use 'sass:map';
 @use '_variables.scss' as va;
 
-//  NEON-GLOW
 @mixin neon-glow($color: va.$accent-color, $spread: 0.5) {
     box-shadow: 
         0 0 5px rgba($color, $spread),
@@ -11,7 +10,6 @@
     transition: box-shadow 0.3s ease;
 }
 
-// DARK-CARD
 @mixin dark-card($padding: va.$spacing-lg) {
     background-color: va.$secondary-bg;
     padding: $padding;
@@ -20,7 +18,6 @@
     transition: all 0.3s ease;
 }
 
-// HOVER-LIFT
 @mixin hover-lift($glow-spread: 0.4) {
     &:hover {
         transform: translateY(-5px);
@@ -28,7 +25,6 @@
     }
 }
 
-// BREAKPOINT ( sm, md, lg, xl)
 @mixin breakpoint($size) {
     @if map.has-key(va.$breakpoints, $size) {
         $breakpoint-value: map.get(va.$breakpoints, $size);

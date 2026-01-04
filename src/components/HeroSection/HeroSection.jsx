@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './HeroSection.module.scss';
+import avatarGVA from '../../assets/GVA-avatar.webp';
 
 import { FaGithub, FaLinkedinIn, FaDownload, FaEnvelope } from 'react-icons/fa'; 
 
@@ -22,13 +23,13 @@ const HeroSection = (props) => {
             </a>
             
             <div className={styles.socials}>
-              <a href="URL_GITHUB" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+              <a href="https://github.com/GVA-987" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                 <FaGithub />
               </a>
-              <a href="URL_LINKEDIN" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+              <a href="https://www.linkedin.com/in/juan-gabriel-vargas-gva/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                 <FaLinkedinIn />
               </a>
-              <a href="mailto:tu.email@ejemplo.com" className={styles.socialIcon}>
+              <a href="mailto:j.gabrielv.aliaga9877@gmail.com" className={styles.socialIcon}>
                 <FaEnvelope /> 
               </a>
             </div>
@@ -38,7 +39,7 @@ const HeroSection = (props) => {
         <div className={styles.imageColumn}>
           <div className={styles.profileWrapper}>
             <img 
-              src="/images/tu_foto_perfil.jpg" 
+              src= {avatarGVA}
               alt="Juan Gabriel Vargas Aliaga - Profile" 
               className={styles.profilePic} 
             />

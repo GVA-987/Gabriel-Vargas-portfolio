@@ -138,3 +138,8 @@
         color: color.adjust(va.$accent-color, $lightness: 15%);
     }
 }
+.status {
+    margin-top: va.$spacing-md;
+    font-size: 0.9rem;
+    color: va.$accent-color;
+}

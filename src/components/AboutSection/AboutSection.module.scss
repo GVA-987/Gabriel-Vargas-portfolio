@@ -7,45 +7,20 @@
     background-color: va.$secondary-bg;
 
     .contentWrapper {
+        align-items: center;
         display: flex;
         max-width: 1200px;
         margin: 0 auto;
-        gap: va.$spacing-xl * 2;
-        align-items: center;
+        gap: va.$spacing-xl;
 
         @media (max-width: 992px) {
             flex-direction: column;
             text-align: center;
+            align-items: center;
         }
     }
 }
 
-.imagePlaceholder {
-    flex: 1;
-    min-width: 300px;
-    height: 350px;
-    background-color: color.adjust(va.$secondary-bg, $lightness: -5%);
-    border-radius: 8px;
-    border: 2px solid va.$accent-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 15px rgba(va.$accent-color, 0.4);
-    
-    @media (max-width: 992px) {
-        order: -1;
-    }
-}
-
-.placeholderText {
-    color: va.$text-muted;
-    font-style: italic;
-}
-
-.textColumn {
-    flex: 2;
-    max-width: 700px;
-}
 
 .title {
     color: va.$accent-color;
