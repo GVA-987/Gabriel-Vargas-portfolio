@@ -18,7 +18,7 @@ const HeroSection = (props) => {
           </p>
 
           <div className={styles.ctaGroup}>
-            <a href="/cv.pdf" download className={styles.cvButton}>
+            <a href="/gabriel-vargas-CV.pdf" download className={styles.cvButton}>
               <FaDownload className={styles.icon} /> Descargar CV
             </a>
             

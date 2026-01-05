@@ -15,6 +15,9 @@
     padding: va.$spacing-md va.$spacing-xl;
     box-shadow: 0 2px 10px rgba(va.$primary-bg, 0.5);
     border-bottom: 1px solid rgba(va.$accent-color, 0.2);
+    @include mx.breakpoint(md){
+        width: 80%;
+    }
 }
 
 .menuIcon {
