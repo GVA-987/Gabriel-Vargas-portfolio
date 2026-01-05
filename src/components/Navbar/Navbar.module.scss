@@ -17,6 +17,17 @@
     border-bottom: 1px solid rgba(va.$accent-color, 0.2);
 }
 
+.menuIcon {
+    display: none;
+    font-size: 1.5rem;
+    color: va.$accent-color;
+    cursor: pointer;
+
+    @include mx.breakpoint(md) {
+        display: block; 
+    }
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -41,9 +52,23 @@
 .navLinks {
     display: flex;
     gap: va.$spacing-lg;
+    align-items: center;
 
     @include mx.breakpoint(md) {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: rgba(va.$primary-bg, 0.98);
+        padding: va.$spacing-xl 0;
+        border-bottom: 1px solid rgba(va.$accent-color, 0.2);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+
+        &.active {
+            display: flex;
+        }
     }
 }
 

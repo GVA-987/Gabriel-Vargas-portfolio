@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Navbar.module.scss';
-import { FaLaptopCode } from 'react-icons/fa';
+import { FaLaptopCode, FaBars, FaTimes} from 'react-icons/fa';
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
     
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
+            setIsOpen(false);
         }
     };
 
@@ -18,7 +20,11 @@ const Navbar = () => {
                 <span>GVA</span>
             </div>
 
-            <nav className={styles.navLinks}>
+            <div className={styles.menuIcon} onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? <FaTimes /> : <FaBars />}
+            </div>
+
+            <nav className={`${styles.navLinks} ${isOpen ? styles.active : ''}`}>
                 <a onClick={() => scrollToSection('home')} className={styles.navItem}>Inicio</a>
                 <a onClick={() => scrollToSection('about')} className={styles.navItem}>Acerca de mí</a>
                 <a onClick={() => scrollToSection('projects')} className={styles.navItem}>Proyectos</a>
